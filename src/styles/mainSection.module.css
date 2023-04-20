@@ -1,0 +1,26 @@
+.mainSection {
+  width: 100%;
+  padding: 0 3rem;
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns:
+    [side-start] min-content [side-end main-start] minmax(0, 5fr)
+    [main-end main-end] minmax(min-content, 20vw)
+    [end-side];
+  grid-template-rows: none;
+
+  column-gap: 2.5rem;
+}
+
+.mainSection.darkMode {
+  background-color: #2a2c37;
+}
+@media only screen and (max-width: 1000px) {
+  .mainSection {
+    padding: 0 1.5rem;
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+    grid-template-columns: [main-start] minmax(0, 5fr) [main-end];
+    grid-auto-rows: min-content;
+  }
+}

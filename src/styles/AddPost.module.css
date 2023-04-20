@@ -1,0 +1,100 @@
+.AddPost {
+  background-color: #fff;
+  border-radius: 0.6rem;
+  padding: 0.8rem 0.5rem;
+  align-self: start;
+  box-shadow: 0rem 0rem 1rem rgb(0, 0, 0, 0.1);
+  margin-bottom: 1.8rem;
+  position: relative;
+}
+.AddPost:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 0.1rem;
+  background-color: #dad9d7;
+  bottom: -1rem;
+  left: 0;
+}
+
+.PostInput {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+
+.PostInput img {
+  /* width: 100%; */
+  object-fit: cover;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.PostInput button {
+  /* align-self: center; */
+  padding: 0.5rem;
+  color: rgb(138, 138, 138);
+  border-radius: 1.8rem;
+  border: none;
+  flex-grow: 1;
+  text-align: left;
+  cursor: pointer;
+}
+
+.PostInput button:active {
+  background-color: rgb(182, 182, 182);
+  color: #252525;
+}
+
+.MediaInput {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  width: 100%;
+}
+.MediaInput p {
+  color: #2a2c37;
+  font-size: 1.2rem;
+}
+
+.MediaInput button {
+  border: none;
+  background-color: transparent;
+  padding: 0.6rem 0.8rem;
+  color: rgb(138, 138, 138);
+  border-radius: 0.2rem;
+}
+.MediaInput button:hover {
+  background-color: rgba(138, 138, 138, 0.4);
+  color: #252525;
+  transition: all 0.1s linear;
+}
+
+.MediaInput button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.MediaInput .icon {
+  font-size: 1.6rem;
+}
+.icon:nth-child(1) {
+  fill: #0a66c2;
+}
+
+@media only screen and (max-width: 768px) {
+  .MediaInput p {
+    font-size: 0.8rem;
+  }
+  .MediaInput {
+    padding: 0 0.5rem;
+    flex-wrap: wrap;
+  }
+  .MediaInput button {
+    padding: 0.5rem 1.2rem;
+  }
+}

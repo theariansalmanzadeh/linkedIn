@@ -1,0 +1,65 @@
+.Tag {
+  width: 100%;
+  align-self: start;
+  grid-column: main-end/end-side;
+  grid-row: 1/2;
+  background-color: #fff;
+  border-radius: 1rem;
+  padding-bottom: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.1);
+}
+.TagHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  color: rgb(137, 137, 137);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.TagHeader img {
+  width: 2vw;
+}
+
+.followTags {
+  display: flex;
+  gap: 1rem;
+  padding: 0rem 1rem;
+}
+
+.Tag .followTags:nth-child(3) {
+  margin-top: 1rem;
+}
+
+.followTags img {
+  width: 3vw;
+}
+
+.followTags p {
+  font-size: 1rem;
+}
+.followTags button {
+  margin-top: 0.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.8rem;
+  border: 1px solid rgb(182, 182, 182);
+  cursor: pointer;
+}
+.followTags button:hover {
+  background-color: rgb(182, 182, 182);
+}
+
+.Tag a {
+  display: inline-block;
+  color: #0a66c2;
+  padding-left: 1rem;
+  font-size: 1.2rem;
+  margin-top: 3rem;
+  text-decoration: none;
+}
+@media only screen and (max-width: 768px) {
+  .Tag {
+    display: none;
+  }
+}

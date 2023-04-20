@@ -1,0 +1,30 @@
+.writings {
+  font-size: 1.2rem;
+}
+
+.writingsEmail {
+  padding-top: 1rem;
+  font-size: 0.8rem;
+}
+
+.writings span {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.ProfileDetalis {
+  text-align: center;
+  padding-top: 2rem;
+  color: #252525;
+}
+.EditProfile {
+  display: inline-block;
+  font-size: 1rem;
+  background-color: transparent;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  border: none;
+  color: #0a66c2;
+  text-decoration: none;
+  margin-top: 0.5rem;
+}

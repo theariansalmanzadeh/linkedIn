@@ -1,0 +1,11 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 3rem 0 3rem;
+  align-items: center;
+  background-color: #fff;
+}
+
+.nav.darkMode {
+  background-color: #2a2c37;
+}

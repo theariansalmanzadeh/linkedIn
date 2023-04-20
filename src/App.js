@@ -1,57 +1,70 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React, { Suspense, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Switch,
+  Route,
+} from "react-router-dom";
+
+import Login from "./pages/Login";
+import { useDispatch } from "react-redux";
+import { getUserData } from "./store/Login";
+import SignIn from "./pages/SignIn";
+import NewPassReq from "./pages/NewPassReq";
+import { useSetExpireTime } from "./components/Helperfunction";
 
 function App() {
+  const dispatch = useDispatch();
+  const { autoLogout } = useSetExpireTime();
+
+  const Login = React.lazy(() => import("./pages/Login"));
+  const SignUp = React.lazy(() => import("./pages/SignUp"));
+  const NotFound = React.lazy(() => import("./pages/NotFound"));
+  const ProtectedHome = React.lazy(() => import("./pages/HomePage.js"));
+
+  useEffect(() => {
+    const currentTime = Date.now();
+    const tokenId = localStorage.getItem("token");
+    const expireTime = localStorage.getItem("expireTime");
+
+    if (tokenId !== "" && tokenId !== null) {
+      if (currentTime >= expireTime) {
+        autoLogout();
+        return;
+      }
+      console.log(tokenId);
+      dispatch(getUserData(tokenId));
+    }
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <Router>
+      <Suspense fallback={<div>loding...</div>}>
+        <Switch>
+          <Route path="/" exact>
+            <Redirect to="/home" />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/signup">
+            <SignUp />
+          </Route>
+          <Route path="/signin">
+            <SignIn />
+          </Route>
+          <Route path="/newpassword">
+            <NewPassReq />
+          </Route>
+          <Route path="/home">
+            <ProtectedHome />
+          </Route>
+          <Route path="*">
+            <NotFound />
+          </Route>
+        </Switch>
+      </Suspense>
+    </Router>
   );
 }
 

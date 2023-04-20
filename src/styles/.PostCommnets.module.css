@@ -1,0 +1,40 @@
+.postInteraction {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.postInteraction button {
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #666666;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.2rem;
+}
+.postInteraction button:hover {
+  background: #ccc;
+}
+
+.postViewed {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+}
+.postViewed p:hover {
+  color: #0a66c2;
+}
+
+@media only screen and (max-width: 768px) {
+  .postInteraction button {
+    padding: 0.5rem 0.8rem;
+    flex-wrap: wrap;
+  }
+}

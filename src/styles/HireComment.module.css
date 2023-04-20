@@ -1,0 +1,16 @@
+.hireComment {
+  padding-top: 1rem;
+  text-align: center;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.hireComment a {
+  font-weight: 700;
+  color: #0a66c2;
+}
+
+.hireComment.darkMode {
+  background-color: #2a2c37;
+  color: #fff;
+}

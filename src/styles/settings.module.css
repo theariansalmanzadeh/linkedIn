@@ -1,0 +1,67 @@
+.editSettings {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 50%;
+  height: 50%;
+  background-color: white;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+}
+.lightMode {
+  background-color: #f6c57d;
+  padding: 1rem;
+}
+.darkMode {
+  background-color: #02015b;
+  padding: 1rem;
+  color: #fff;
+}
+.modeWrapper div {
+  width: 100%;
+  display: flex;
+  position: relative;
+  transform: translateX(0%);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.modeWrapper {
+  overflow: hidden;
+  width: 3.2rem;
+}
+
+.heading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.heading button {
+  font-size: 2rem;
+  background-color: transparent;
+  border: none;
+}
+
+h4 {
+  font-size: 2rem;
+  color: #0a66c2;
+}

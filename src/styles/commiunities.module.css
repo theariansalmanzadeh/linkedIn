@@ -1,0 +1,36 @@
+.commiunities {
+  grid-column: side-start/side-end;
+  align-self: start;
+  background-color: #fff;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.Activities {
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 1rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.Activities button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.Activities p {
+  margin-top: 0.5rem;
+}
+.Discover {
+  width: 100%;
+  border: none;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  border-top: 1px solid rgb(176, 176, 176);
+}
+.Discover:hover {
+  background-color: rgb(182, 182, 182);
+}
